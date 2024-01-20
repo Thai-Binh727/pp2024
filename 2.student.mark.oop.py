@@ -60,7 +60,7 @@ class Classroom:
             for student in classroom.students:
                 while True:
                     try:
-                        mark = float(input(f"Enter marks for {student['Name']} in {selected_course['Name']}: "))
+                        mark = float(input(f"Enter marks for {student['Name']} in {selected_course["Name"]}: "))
                         if mark < 0:
                             print("Grade can't be negative. Please enter again.")
                         elif mark > 20:
@@ -76,14 +76,14 @@ class Classroom:
     def list_courses(self, classroom):
         print("\nCourses:")
         for course in classroom.courses:
-            print(f"ID: {course['ID']}")
-            print(f"Name: {course['Name']}\n")
+            print(f"ID: {course["ID"]}")
+            print(f"Name: {course["Name"]}\n")
 
     def list_students(self, classroom):
         print("\nStudents:")
         for student in classroom.students:
-            print(f"ID: {student['ID']}")
-            print(f"Name: {student['Name']}\n")
+            print(f"ID: {student["ID"]}")
+            print(f"Name: {student["Name"]}\n")
 
     def show_student_marks_for_course(self, classroom):
         student_id = str(input("Enter student ID to show marks: ")).upper()
@@ -95,9 +95,9 @@ class Classroom:
             marks = selected_student.get("marks", {}).get(course_id, None)
 
             if marks is not None:
-                print(f"Marks for {selected_student['Name']} in {course_id}: {marks}")
+                print(f"Marks for {selected_student["Name"]} in {course_id}: {marks}")
             else:
-                print(f"Marks not found for {selected_student['Name']} in {course_id}.")
+                print(f"Marks not found for {selected_student["Name"]} in {course_id}.")
         else:
             print("Student not found.")
 
